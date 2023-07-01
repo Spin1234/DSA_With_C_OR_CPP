@@ -41,7 +41,7 @@ In the `insertAtBeginning` function, we receive `struct Node** head` as a parame
 So, the double pointer allows us to modify the original pointer (`head`) rather than just a copy of it, enabling us to update the linked list correctly.
 
 ### void displayList(struct Node* head) 
-why double pointer is not used here??
+### why double pointer is not used here??
 
 In the `displayList` function, a double pointer is not used for the `head` parameter because the function only needs to read the value of `head` to traverse the linked list. There is no need to modify the `head` pointer itself within the function.
 
@@ -49,7 +49,7 @@ A double pointer is typically used when you want to modify the pointer itself, s
 
 Therefore, a single pointer (`struct Node*`) is sufficient to traverse the linked list and display its contents in the `displayList` function.
 
-### Delete node
+### Delete node :
 
 Here's a function to delete a node from the linked list:
 
