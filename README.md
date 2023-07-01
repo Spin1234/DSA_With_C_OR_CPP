@@ -1,7 +1,8 @@
 # DSA_With_C
 
 ## 1. Linked List:
-### struct Node** head meaning:
+### struct Node** head meaning :
+
 In the linked list implementation in C that I provided, `struct Node** head` is a pointer to a pointer to a `struct Node`. It is used as a double pointer to keep track of the head or the start of the linked list.
 
 Why use a double pointer? 
@@ -37,3 +38,44 @@ int main() {
 In the `insertAtBeginning` function, we receive `struct Node** head` as a parameter. By dereferencing `head` using `*head`, we get the original `head` pointer inside the function. We can modify it to point to the new node using `*head = newNode;`. This change to the original `head` pointer will be reflected outside the function in the `main` function.
 
 So, the double pointer allows us to modify the original pointer (`head`) rather than just a copy of it, enabling us to update the linked list correctly.
+
+### void displayList(struct Node* head) 
+why double pointer is not used here??
+
+In the `displayList` function, a double pointer is not used for the `head` parameter because the function only needs to read the value of `head` to traverse the linked list. There is no need to modify the `head` pointer itself within the function.
+
+A double pointer is typically used when you want to modify the pointer itself, such as when inserting a node at the beginning or reassigning the head pointer after deleting a node. However, in the `displayList` function, the `head` pointer is passed by value, which means any changes made to `head` within the function will not affect the original pointer in the caller.
+
+Therefore, a single pointer (`struct Node*`) is sufficient to traverse the linked list and display its contents in the `displayList` function.
+
+### Delete node
+
+Here's a function to delete a node from the linked list:
+
+```c
+void deleteNode(struct Node** head, int key) {
+    struct Node* prevNode = NULL;
+    struct Node* currNode = *head;
+
+    if (currNode != NULL && currNode->data == key) {
+        *head = currNode->link;
+        free(currNode);
+        return;
+    }
+
+    while (currNode != NULL && currNode->data != key) {
+        prevNode = currNode;
+        currNode = currNode->link;
+    }
+
+    if (currNode == NULL) {
+        printf("Node not found in the list.\n");
+        return;
+    }
+
+    prevNode->link = currNode->link;
+    free(currNode);
+}
+```
+
+In this code, the `deleteNode` function is added to delete a node with a given value from the linked list. The function traverses the linked list and finds the node with the specified key. It then adjusts the pointers of the previous node and the next node to skip over the node to be deleted. Finally, it frees the memory allocated for the deleted node.
