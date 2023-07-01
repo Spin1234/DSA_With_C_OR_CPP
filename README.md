@@ -1,7 +1,7 @@
 # DSA_With_C
 
 ## 1. Linked List:
-### struct Node** head meaning :
+### + struct Node** head meaning :
 
 In the linked list implementation in C that I provided, `struct Node** head` is a pointer to a pointer to a `struct Node`. It is used as a double pointer to keep track of the head or the start of the linked list.
 
