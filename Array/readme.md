@@ -1,9 +1,9 @@
-## Problem description:  ![](https://www.hackerrank.com/challenges/array-left-rotation/problem)
+## Problem description:  [https://www.hackerrank.com/challenges/array-left-rotation/problem](https://www.hackerrank.com/challenges/array-left-rotation/problem)
 
 ### Solution:
 
 cpp
-`
+```
 vector<int> rotateLeft(int d, vector<int> arr) {
     vector<int> ans;
     for(int i=d;i<arr.size();i++){
@@ -14,4 +14,4 @@ vector<int> rotateLeft(int d, vector<int> arr) {
     }
     return ans;
 }
-`
+```
