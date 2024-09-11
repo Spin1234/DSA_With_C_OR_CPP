@@ -12,6 +12,6 @@ int birthdayCakeCandles(vector<int> candles) {
 }
 ```
 
-In C++, use ```cpp std::max_element(candles.begin(), candles.end())``` to get an iterator to the maximum element, then dereference it to get the value.
+In C++, use ```std::max_element(candles.begin(), candles.end())``` to get an iterator to the maximum element, then dereference it to get the value.
 
-In C++, use ```cpp std::count(candles.begin(), candles.end(), max_height)``` to count the number of occurrences of the maximum height.
+In C++, use ```std::count(candles.begin(), candles.end(), max_height)``` to count the number of occurrences of the maximum height.
