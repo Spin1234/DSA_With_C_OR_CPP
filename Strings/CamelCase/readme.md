@@ -2,7 +2,7 @@
 
 ### Solution in cpp:
 
-```c++
+```cpp
 
 int camelcase(string s) {
     int c=0;
